@@ -78,9 +78,7 @@ export default function EarlyAccess() {
       <nav className="border-b border-border py-4 px-6 md:px-12">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <span className="scale-[0.5] origin-left">
-              <ThemeAwareLogo />
-            </span>
+            <ThemeAwareLogo />
           </Link>
           <ThemeToggle />
         </div>
