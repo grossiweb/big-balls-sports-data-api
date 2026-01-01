@@ -54,21 +54,23 @@ export default function Home() {
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { name: "NFL", src: "/nfl.png", alt: "NFL Logo" },
-              { name: "NBA", src: "/nba.png", alt: "NBA Logo" },
-              { name: "College Football", src: "/ncaaf.png", alt: "NCAA Football Logo" },
-              { name: "College Basketball", src: "/ncaab.png", alt: "NCAA Basketball Logo" },
+              { name: "NFL", src: "/nfl.png", alt: "NFL Logo", href: "/docs/nfl-stats" },
+              { name: "NBA", src: "/nba.png", alt: "NBA Logo", href: "/docs/nba-stats" },
+              { name: "College Football", src: "/ncaaf.png", alt: "NCAA Football Logo", href: "/docs/cfb-stats" },
+              { name: "College Basketball", src: "/ncaab.png", alt: "NCAA Basketball Logo", href: "/docs/ncaab-stats" },
             ].map((sport) => (
-              <div key={sport.name} className="flex flex-col items-center gap-4">
-                <div className="flex justify-center items-center h-20">
-                  <img
-                    src={sport.src || "/placeholder.svg"}
-                    alt={sport.alt}
-                    className="max-h-16 max-w-full object-contain"
-                  />
+              <Link key={sport.name} href={sport.href || "#"}>
+                <div className="flex flex-col items-center gap-4 cursor-pointer hover:opacity-75 transition-opacity">
+                  <div className="flex justify-center items-center h-20">
+                    <img
+                      src={sport.src || "/placeholder.svg"}
+                      alt={sport.alt}
+                      className="max-h-16 max-w-full object-contain"
+                    />
+                  </div>
+                  <p className="text-sm font-medium text-center text-foreground">{sport.name}</p>
                 </div>
-                <p className="text-sm font-medium text-center text-foreground">{sport.name}</p>
-              </div>
+              </Link>
             ))}
           </div>
           <p className="text-muted-foreground mt-8">Additional sports will be added based on early access demand.</p>
