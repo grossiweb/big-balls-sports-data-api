@@ -5,9 +5,9 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import Image from "next/image"
 import Link from "next/link"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { ThemeAwareLogo } from "@/components/theme-aware-logo"
 
 export default function EarlyAccess() {
   const [formData, setFormData] = useState({
@@ -78,7 +78,7 @@ export default function EarlyAccess() {
       <nav className="border-b border-border py-4 px-6 md:px-12">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <Image src="/logo.png" alt="Big Balls Sports" width={40} height={40} className="w-10 h-10" />
+            <ThemeAwareLogo />
           </Link>
           <ThemeToggle />
         </div>
